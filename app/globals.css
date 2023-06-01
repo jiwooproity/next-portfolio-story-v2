@@ -1,0 +1,27 @@
+:root {
+  --main-font-color: #2c2c2c;
+  --footer-bg-color: #42414d;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  width: 100%;
+  height: calc(100vh + 100px);
+}
+
+.test {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
