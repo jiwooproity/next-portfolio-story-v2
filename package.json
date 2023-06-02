@@ -1,5 +1,6 @@
 {
   "name": "next-portfolio-story-v2",
+  "homepage": "/home",
   "version": "0.1.0",
   "private": true,
   "scripts": {

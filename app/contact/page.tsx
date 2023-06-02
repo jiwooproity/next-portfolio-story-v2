@@ -1,5 +1,5 @@
 export default function contact() {
     return (
-        <div className="test">Contact Page!</div>
+        <div className="main-container">Contact Page!</div>
     )
 }

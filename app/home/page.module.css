@@ -1,0 +1,50 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 16px 16px;
+}
+
+.jsViewContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jsViewInnerWrapper {
+    width: 1200px;
+    height: 100%;
+    border: 1px solid var(--border-main-color);
+}
+
+.jsViewHeader {
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.jsViewUrlContent {
+    width: auto;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    border: 1px solid var(--border-main-color);
+}
+
+.jsViewUrlContent > span {
+    padding: 0px 64px;
+}
+
+.chevronBox {
+    display: flex;
+    align-items: center;
+}
+
+.jsViewContent {
+    width: 100%;
+    display: flex;
+}

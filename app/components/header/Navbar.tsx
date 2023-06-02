@@ -7,7 +7,7 @@ interface MenuListIF {
 }
 
 const menuList: MenuListIF[] = [
-    { to: './', label: 'Home' },
+    { to: './home', label: 'Home' },
     { to: './resume', label: 'Resume' },
     { to: './contact', label: 'Contact' },
 ]
