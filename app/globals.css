@@ -1,6 +1,8 @@
 :root {
   --main-font-color: #2c2c2c;
-  --footer-bg-color: #42414d;
+  --navbar-bg-color: #ffffff;
+  --footer-bg-color: #2d2c30;
+  --border-main-color: #f3f3f3;
 }
 
 * {
@@ -18,9 +20,9 @@ body {
   height: calc(100vh + 100px);
 }
 
-.test {
+.main-container {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
