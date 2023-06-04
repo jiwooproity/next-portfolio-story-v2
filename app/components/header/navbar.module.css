@@ -7,7 +7,8 @@
   left: 0;
   background-color: var(--navbar-bg-color);
   pointer-events: none;
-  transition: backdrop-filter 0.5s ease;
+  transition: backdrop-filter 0.5s ease, background-color 0.5s ease;
+  z-index: 1;
 }
 
 .navContainer.down {

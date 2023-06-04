@@ -1,11 +1,12 @@
 :root {
   --main-width: 1050px;
   --main-bg-opacity: 1;
-  --main-bg-color: rgb(15 23 42 / var(--main-bg-opacity));
+  --main-bg-color: rgb(38 23 77 / var(--main-bg-opacity));
   --main-font-color: #e6e6e6;
+  --main-font-description-color: #e6e6e66f;
   --navbar-bg-color: none;
   --navbar-bg-opacity: 0.8;
-  --navbar-down-bg-color: rgb(15 23 42 / var(--navbar-bg-opacity));
+  --navbar-down-bg-color: rgb(38 23 77 / var(--navbar-bg-opacity));
   --footer-bg-color: #0e0f13;
   --border-main-color: #f3f3f3;
 }
@@ -16,16 +17,16 @@
   box-sizing: border-box;
 }
 
-body {
+html {
   background-color: var(--main-bg-color);
-}
-
-::-webkit-scrollbar {
-  display: none;
 }
 
 body {
   width: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .main-container {
