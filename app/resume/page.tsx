@@ -1,5 +1,5 @@
+import style from "./resume.module.css";
+
 export default function resume() {
-    return (
-        <div className="main-container">Resume Page!</div>
-    )
+  return <div className={style.resumeWrapper}>Resume Page!</div>;
 }
