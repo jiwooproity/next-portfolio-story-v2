@@ -28,14 +28,10 @@ export default function Navbar() {
   const onScroll = () => {
     const navbar = document.getElementsByClassName(style.navContainer);
 
-    if (window.scrollY === 0) {
-      navbar[0].classList.remove(style.down);
-    }
-
     if (window.scrollY > 0) {
-      console.log(window.scrollY);
-
       navbar[0].classList.add(style.down);
+    } else {
+      navbar[0].classList.remove(style.down);
     }
   };
 

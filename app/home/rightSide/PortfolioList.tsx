@@ -1,3 +1,7 @@
-export default async function PorfolioList() {
-  return <div></div>;
+export default function PorfolioList() {
+  return (
+    <div id="portfolio" className="right-area">
+      asdasdas
+    </div>
+  );
 }
