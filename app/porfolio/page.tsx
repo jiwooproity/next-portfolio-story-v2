@@ -8,7 +8,6 @@ async function getPortfolios() {
 
 export default async function porfolio() {
   const porfolios = await getPortfolios();
-  console.log(porfolios);
 
   return (
     <div className={style.porfolioWrapper}>
