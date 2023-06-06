@@ -1,6 +1,6 @@
 .homeWrapper {
   width: var(--main-width);
-  min-height: 120vh;
+  min-height: 150vh;
   padding: 100px 0 0 0;
   display: flex;
   align-items: flex-start;
@@ -72,14 +72,14 @@
   left: 0px;
 }
 
-.right > p {
+.right > .introduceArea > p {
   font-size: 15px;
   line-height: 20px;
   white-space: pre-line;
   color: var(--main-font-description-color);
 }
 
-.right > p > strong {
+.right > .introduceArea > p > strong {
   font-weight: 700;
   color: var(--main-font-color);
   opacity: 0.7;
