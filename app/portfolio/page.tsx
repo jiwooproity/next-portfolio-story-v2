@@ -1,4 +1,4 @@
-import { getNotionApi } from "../apis/porfolioApi";
+import { getNotionApi } from "../apis/portfolioApi";
 import style from "./page.module.css";
 
 async function getPortfolios() {
@@ -6,7 +6,7 @@ async function getPortfolios() {
   return res.results;
 }
 
-export default async function porfolio() {
+export default async function portfolio() {
   const porfolios = await getPortfolios();
 
   return (
