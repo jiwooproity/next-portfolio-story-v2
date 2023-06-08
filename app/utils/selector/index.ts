@@ -2,8 +2,8 @@ export function getElementByIds(id: string) {
   return document.getElementById(id) as HTMLElement;
 }
 
-export function getOffSet(el: HTMLElement) {
-  return { id: el.id, offsetTop: el.offsetTop };
+export function getOffSet({ id, offsetTop }: HTMLElement) {
+  return { id: id, offsetTop: offsetTop };
 }
 
 export function getArraySelector({

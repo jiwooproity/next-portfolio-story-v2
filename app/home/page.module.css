@@ -39,7 +39,7 @@
 }
 
 .left > .linkArea {
-  display: block;
+  display: flex;
   margin: 80px 0 0 0;
 }
 
@@ -53,14 +53,22 @@
 .left > .linkArea > ul > li {
   font-size: 15px;
   line-height: 15px;
+  text-transform: capitalize;
   color: var(--main-font-description-color);
   cursor: pointer;
+  transition: color 0.3s ease, padding 0.3s ease;
 }
 
 .left > .linkArea > ul > li.active {
   color: var(--main-font-color);
   position: relative;
   padding: 0px 0px 0px 20px;
+}
+
+.left > .linkArea > ul > li::after {
+  content: "";
+  width: 0px;
+  transition: width 0.3s ease;
 }
 
 .left > .linkArea > ul > li.active::after {
@@ -70,6 +78,29 @@
   position: absolute;
   top: 50%;
   left: 0px;
+}
+
+.left > .contactArea {
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  margin: 80px 0 0 0;
+}
+
+.left > .contactArea > a > svg {
+  width: 25px;
+  height: 25px;
+  fill: var(--main-font-description-color);
+  transition: fill 0.3s ease;
+  opacity: 0.5;
+}
+
+.left > .contactArea > a > svg:hover {
+  fill: var(--main-font-color);
+}
+
+.right > .introduceArea {
+  margin: 0px 0px 30px 0px;
 }
 
 .right > .introduceArea > p {
