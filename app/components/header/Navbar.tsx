@@ -11,7 +11,7 @@ interface MenuListIF {
 
 const menuList: MenuListIF[] = [
   { to: "./home", label: "Home" },
-  { to: "./porfolio", label: "Porfolio" },
+  { to: "./portfolio", label: "Portfolio" },
   { to: "./resume", label: "Resume" },
   { to: "./contact", label: "Contact" },
 ];
