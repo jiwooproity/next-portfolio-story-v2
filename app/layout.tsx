@@ -1,11 +1,9 @@
-"use client";
-
-import { MouseEvent, useState } from "react";
 import { Navbar, Footer } from "./components";
 
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Container from "./components/common/Container";
+import Background from "./components/common/background/Background";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,26 +17,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [background, setBackground] = useState<string>(
-    `radial-gradient(600px at 0px 0px, rgba(184, 117, 126, 0.15), transparent 80%)`
-  );
-
-  const onMouseMove = (e: MouseEvent<HTMLBodyElement>) => {
-    const { clientX, clientY } = e;
-    const changeBackground = `radial-gradient(600px at ${clientX}px ${clientY}px, rgba(184, 117, 126, 0.15), transparent 80%)`;
-    setBackground(changeBackground);
-  };
 
   return (
     <html lang="en">
       <body
         className={inter.className}
-        style={{ background }}
-        onMouseMove={onMouseMove}
       >
-        <Navbar />
-        <Container>{children}</Container>
-        <Footer />
+        <Background>
+          <Navbar />
+          <Container>{children}</Container>
+          <Footer />
+        </Background>
       </body>
     </html>
   );
