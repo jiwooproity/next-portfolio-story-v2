@@ -7,31 +7,28 @@ import SubLink from "./leftSide/SubLink";
 import PorfolioList from "./rightSide/PortfolioList";
 import Contact from "./leftSide/Contact";
 
-import { getNotionApi } from "../apis/portfolioApi";
+import { NotionResultsIF, getNotionApi } from "../apis/portfolioApi";
 
-async function getPorfolioList() {
-  const convertData = ({ properties }: any) => {
+async function getPortfolio() {
+  const convert = (results: NotionResultsIF) => {
+    const { properties } = results;
+
     return {
+      id: results.id,
       title: properties.Title.title[0].text.content,
       description: properties.Description.rich_text[0].text.content,
-      domain: properties.Domain.url,
-      github: properties.GitHub.url,
-      created: properties.Date.date.start,
-      ended:
-        properties.Date.date.end || moment(new Date()).format("YYYY-MM-DD"),
-      tag: properties.Tag.multi_select,
-      feature: properties.Feature.multi_select,
-      progress: !properties.Date.date.end,
+      start: properties.Date.date.start,
+      end: properties.Date.date.end ?? moment(new Date()).format("YYYY-MM-DD"),
     };
   };
 
-  const response = await getNotionApi();
-  const porfolios = response.results.map(convertData);
-  return porfolios;
+  const data = await getNotionApi();
+  const convertData = data.results.map(convert);
+  return convertData;
 }
 
 export default async function Home() {
-  const porfolios = await getPorfolioList();
+  const porfolios = await getPortfolio();
 
   return (
     <div className={style.homeWrapper}>

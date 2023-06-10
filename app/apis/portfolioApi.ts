@@ -4,6 +4,67 @@ const Notion = {
   getNotionList: `https://api.notion.com/v1/databases/${process.env.NEXT_NOTION_DATABASE_ID}/query`,
 };
 
+interface NotionDescriptionIF {
+  type: string;
+  text: {
+    content: string;
+    link: string;
+  };
+  annotations: {
+    bold: boolean;
+    italic: boolean;
+    strikethrough: boolean;
+    underline: boolean;
+    code: boolean;
+    color: string;
+  };
+  plain_text: string;
+  href: string;
+}
+
+interface NotionTitleIF {
+  type: string;
+  text: {
+    content: string;
+    link: string;
+  };
+  annotations: any;
+  plain_text: string;
+  href: string;
+}
+
+interface NotionMultiSelectIF {
+  id: string;
+  name: string;
+  color: string;
+}
+
+export interface NotionPropertiesIF {
+  Description: { id: string; type: string; rich_text: NotionDescriptionIF[] };
+  GitHub: {
+    id: string;
+    type: string;
+    url: string;
+  };
+  Date: {
+    id: string;
+    type: string;
+    date: { start: string; end: string; time_zone: string };
+  };
+  Feature: {
+    id: string;
+    type: string;
+    multi_select: NotionMultiSelectIF[];
+  };
+  Tag: {
+    id: string;
+    type: string;
+    multi_select: NotionMultiSelectIF[];
+  };
+  Domain: { id: string; type: string; url: string };
+  Title: { id: string; type: string; title: NotionTitleIF[] };
+}
+
 export interface NotionResultsIF {
   object: string;
   id: string;
@@ -13,7 +74,7 @@ export interface NotionResultsIF {
   icon: null;
   parent: any;
   archived: false;
-  properties: any;
+  properties: NotionPropertiesIF;
   url: any;
 }
 
