@@ -14,9 +14,8 @@ export async function load({
   cache,
 }: FetchPropsType) {
   try {
-    return await fetch(url, { next, method, cache, headers }).then((res) =>
-      res.json()
-    );
+    const response = await fetch(url, { headers, method, next, cache });
+    return await response.json();
   } catch (e) {
     console.log(e);
   }

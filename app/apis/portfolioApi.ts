@@ -4,7 +4,7 @@ const Notion = {
   getNotionList: `https://api.notion.com/v1/databases/${process.env.NEXT_NOTION_DATABASE_ID}/query`,
 };
 
-interface NotionResultsIF {
+export interface NotionResultsIF {
   object: string;
   id: string;
   created_time: string;
@@ -17,7 +17,7 @@ interface NotionResultsIF {
   url: any;
 }
 
-interface NotionApiResponseIF {
+export interface NotionApiResponseIF {
   object: string;
   results: NotionResultsIF[];
   next_cursor: null;
