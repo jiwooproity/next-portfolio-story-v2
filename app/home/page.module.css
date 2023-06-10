@@ -115,3 +115,22 @@
   color: var(--main-font-color);
   opacity: 0.7;
 }
+
+.right > .portfolioArea > .title {
+  font-size: 25px;
+  line-height: 25px;
+  margin: 0px 0px 10px 0px;
+  color: var(--main-font-color);
+}
+
+.right > .portfolioArea > .notionTitle {
+  font-size: 15px;
+  line-height: 25px;
+  color: var(--main-font-color);
+}
+
+.right > .portfolioArea > .notionDescription {
+  font-size: 15px;
+  line-height: 25px;
+  color: var(--main-font-description-color);
+}
