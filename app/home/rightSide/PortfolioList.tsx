@@ -1,12 +1,16 @@
 // 홈 화면 포트폴리오 리스트 출력 준비
+import Image from "next/image";
 import style from "../page.module.css";
+import { NotionMultiSelectIF } from "../../apis/portfolioApi";
 
 interface PortfolioDetailIF {
   id: string;
   title: string;
   description: string;
+  stack: NotionMultiSelectIF[];
   start: string;
   end: string;
+  thumbnail: string;
 }
 
 interface PortfolioPropsType {
@@ -16,12 +20,20 @@ interface PortfolioPropsType {
 export default function PorfolioList({ data }: PortfolioPropsType) {
   return (
     <div id="portfolio" className={`right-area ${style.portfolioArea}`}>
-      <h2 className={style.title}>Portfolio</h2>
-      {data.map((item: PortfolioDetailIF) => (
-        <>
-          <p className={style.notionTitle}>{item.title}</p>
-          <p className={style.notionDescription}>{item.description}</p>
-        </>
+      {data.map((item) => (
+        <div key={item.id} className={style.projectArea}>
+          <Image
+            className={style.projectImage}
+            src={item.thumbnail}
+            width={100}
+            height={56}
+            alt={`${item.title}`}
+          />
+          <div className={style.projectInfoArea}>
+            <h2 className={style.projectTitle}>{item.title}</h2>
+            <span className={style.projectDescription}>{item.description}</span>
+          </div>
+        </div>
       ))}
     </div>
   );

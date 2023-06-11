@@ -11,14 +11,16 @@ import { NotionResultsIF, getNotionApi } from "../apis/portfolioApi";
 
 async function getPortfolio() {
   const convert = (results: NotionResultsIF) => {
-    const { properties } = results;
+    const { properties, cover } = results;
 
     return {
       id: results.id,
       title: properties.Title.title[0].text.content,
       description: properties.Description.rich_text[0].text.content,
+      stack: properties.Tag.multi_select,
       start: properties.Date.date.start,
       end: properties.Date.date.end ?? moment(new Date()).format("YYYY-MM-DD"),
+      thumbnail: cover.file.url,
     };
   };
 
