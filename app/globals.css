@@ -1,6 +1,7 @@
 :root {
   --main-width: 1050px;
   --main-bg-opacity: 1;
+  --portfolio-box-hover-opacity: 0.2;
   --main-bg-color: rgb(38 23 77 / var(--main-bg-opacity));
   --main-font-color: #e6e6e6;
   --main-font-description-color: #e6e6e66f;
@@ -9,6 +10,9 @@
   --navbar-down-bg-color: rgb(38 23 77 / var(--navbar-bg-opacity));
   --footer-bg-color: #0e0f13;
   --border-main-color: #f3f3f3;
+  --portfolio-box-hover-color: rgb(
+    106 72 191 / var(--portfolio-box-hover-opacity)
+  );
 }
 
 * {

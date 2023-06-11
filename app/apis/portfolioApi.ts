@@ -33,7 +33,7 @@ interface NotionTitleIF {
   href: string;
 }
 
-interface NotionMultiSelectIF {
+export interface NotionMultiSelectIF {
   id: string;
   name: string;
   color: string;
@@ -70,7 +70,11 @@ export interface NotionResultsIF {
   id: string;
   created_time: string;
   last_edited_tiem: string;
-  cover: any;
+  cover: {
+    file: {
+      url: string;
+    };
+  };
   icon: null;
   parent: any;
   archived: false;
