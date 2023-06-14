@@ -9,6 +9,16 @@ import Contact from "./leftSide/Contact";
 
 import { NotionResultsIF, getNotionApi } from "../apis/portfolioApi";
 
+interface NotionSortingIF {
+  page_size: number;
+  sorts: [
+    {
+      property: string;
+      direction: string;
+    }
+  ];
+}
+
 async function getPortfolio() {
   const convert = (results: NotionResultsIF) => {
     const { properties, cover } = results;
@@ -21,10 +31,16 @@ async function getPortfolio() {
       start: properties.Date.date.start,
       end: properties.Date.date.end ?? moment(new Date()).format("YYYY-MM-DD"),
       thumbnail: cover.file.url,
+      domain: properties.Domain.url,
     };
   };
 
-  const data = await getNotionApi();
+  const body: NotionSortingIF = {
+    page_size: 15,
+    sorts: [{ property: "Date", direction: "descending" }],
+  };
+
+  const data = await getNotionApi({ body });
   const convertData = data.results.map(convert);
   return convertData;
 }

@@ -1,5 +1,5 @@
-// 홈 화면 포트폴리오 리스트 출력 준비
-import Image from "next/image";
+import moment from "moment";
+
 import style from "../page.module.css";
 import { NotionMultiSelectIF } from "../../apis/portfolioApi";
 
@@ -11,6 +11,7 @@ interface PortfolioDetailIF {
   start: string;
   end: string;
   thumbnail: string;
+  domain: string;
 }
 
 interface PortfolioPropsType {
@@ -21,19 +22,19 @@ export default function PorfolioList({ data }: PortfolioPropsType) {
   return (
     <div id="portfolio" className={`right-area ${style.portfolioArea}`}>
       {data.map((item) => (
-        <div key={item.id} className={style.projectArea}>
-          <Image
-            className={style.projectImage}
-            src={item.thumbnail}
-            width={100}
-            height={56}
-            alt={`${item.title}`}
-          />
-          <div className={style.projectInfoArea}>
-            <h2 className={style.projectTitle}>{item.title}</h2>
-            <span className={style.projectDescription}>{item.description}</span>
+        <a key={item.id} href={item.domain} target="_blank">
+          <div className={style.projectArea}>
+            <div className={style.projectDate}>
+              <span>{moment(item.start).format("YYYY.MM.DD")}</span>
+            </div>
+            <div className={style.projectInfoArea}>
+              <h2 className={style.projectTitle}>{item.title}</h2>
+              <span className={style.projectDescription}>
+                {item.description}
+              </span>
+            </div>
           </div>
-        </div>
+        </a>
       ))}
     </div>
   );
