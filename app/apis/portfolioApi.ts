@@ -91,7 +91,11 @@ export interface NotionApiResponseIF {
   page: {};
 }
 
-export const getNotionApi = async (): Promise<NotionApiResponseIF> => {
+export const getNotionApi = async ({
+  body,
+}: {
+  body: any;
+}): Promise<NotionApiResponseIF> => {
   const headers = {
     Accept: "application/json",
     "Content-Type": "application/json",
@@ -103,6 +107,7 @@ export const getNotionApi = async (): Promise<NotionApiResponseIF> => {
     url: Notion.getNotionList,
     headers: headers,
     method: "POST",
+    body: body,
     next: { revalidate: 60 },
   });
 };

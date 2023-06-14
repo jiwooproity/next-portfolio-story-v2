@@ -6,7 +6,11 @@
   align-items: flex-start;
 }
 
-.left,
+.left {
+  width: 50%;
+  height: 100%;
+}
+
 .right {
   width: 50%;
   height: 100%;
@@ -121,6 +125,10 @@
   margin: 0px 0px 30px 0px;
 }
 
+.right > .portfolioArea > a {
+  text-decoration: none;
+}
+
 .right > .portfolioArea > .title {
   font-size: 25px;
   line-height: 25px;
@@ -128,7 +136,7 @@
   color: var(--main-font-color);
 }
 
-.right > .portfolioArea > .projectArea {
+.right > .portfolioArea > a > .projectArea {
   display: flex;
   padding: 15px;
   gap: 15px;
@@ -136,32 +144,39 @@
   cursor: pointer;
 }
 
-.right > .portfolioArea > .projectArea:hover {
+.right > .portfolioArea > a > .projectArea:hover {
   border-radius: 5px;
   background-color: var(--portfolio-box-hover-color);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-.right > .portfolioArea > .projectArea > .projectImage {
+.right > .portfolioArea > a > .projectArea > .projectDate {
   width: 100px;
-  height: 56px;
   border-radius: 2px;
 }
 
-.right > .portfolioArea > .projectArea > .projectInfoArea {
+.right > .portfolioArea > a > .projectArea > .projectDate > span {
+  font-size: 13px;
+  line-height: 13px;
+  color: var(--main-font-description-color);
+}
+
+.right > .portfolioArea > a > .projectArea > .projectInfoArea {
+  width: 100%;
   display: flex;
   gap: 10px;
   flex-direction: column;
 }
 
-.right > .portfolioArea > .projectArea > .projectInfoArea > .projectTitle {
-  font-size: 15px;
-  line-height: 15px;
+.right > .portfolioArea > a > .projectArea > .projectInfoArea > .projectTitle {
+  font-size: 18px;
+  line-height: 18px;
   color: var(--main-font-color);
 }
 
 .right
   > .portfolioArea
+  > a
   > .projectArea
   > .projectInfoArea
   > .projectDescription {
