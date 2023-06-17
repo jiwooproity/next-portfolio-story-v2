@@ -1,8 +1,9 @@
 import moment from "moment";
 
+import style from "./page.module.css";
+
 import Introduce from "./rightSide/Introduce.";
 import Title from "./leftSide/Title";
-import style from "./page.module.css";
 import SubLink from "./leftSide/SubLink";
 import PorfolioList from "./rightSide/PortfolioList";
 import Contact from "./leftSide/Contact";

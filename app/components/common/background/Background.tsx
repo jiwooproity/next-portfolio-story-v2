@@ -12,7 +12,9 @@ export default function Background({ children }: BackgroundPropsType) {
   );
 
   const onMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    const { clientX, clientY } = e;
+    const clientX = e.clientX;
+    const clientY = e.clientY + window.scrollY;
+
     const changeBackground = `radial-gradient(600px at ${clientX}px ${clientY}px, rgba(184, 117, 126, 0.15), transparent 80%)`;
     setBackground(changeBackground);
   };
