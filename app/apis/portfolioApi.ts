@@ -87,9 +87,19 @@ export interface NotionApiResponseIF {
   page: {};
 }
 
+export interface NotionSortIF {
+  page_size: number;
+  sorts: {
+    property: string;
+    direction: string;
+  }[];
+}
+
 export const getNotionApi = async ({
   body,
-}: any): Promise<NotionApiResponseIF> => {
+}: {
+  body: NotionSortIF;
+}): Promise<NotionApiResponseIF> => {
   const headers = {
     Accept: "application/json",
     "Content-Type": "application/json",

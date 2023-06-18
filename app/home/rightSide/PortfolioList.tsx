@@ -1,4 +1,5 @@
-// 홈 화면 포트폴리오 리스트 출력 준비
+import moment from "moment";
+
 import style from "../page.module.css";
 
 interface PortfolioDetailIF {
@@ -16,12 +17,20 @@ interface PortfolioPropsType {
 export default function PorfolioList({ data }: PortfolioPropsType) {
   return (
     <div id="portfolio" className={`right-area ${style.portfolioArea}`}>
-      <h2 className={style.title}>Portfolio</h2>
       {data.map((item: PortfolioDetailIF) => (
-        <>
-          <p className={style.notionTitle}>{item.title}</p>
-          <p className={style.notionDescription}>{item.description}</p>
-        </>
+        <a key={item.id}>
+          <div className={style.portfolioBox}>
+            <span className={style.portfolioDate}>
+              {moment(item.start).format("YYYY.MM.DD")}
+            </span>
+            <div className={style.portfolioContent}>
+              <h1 className={style.notionTitle}>{item.title}</h1>
+              <span className={style.notionDescription}>
+                {item.description}
+              </span>
+            </div>
+          </div>
+        </a>
       ))}
     </div>
   );

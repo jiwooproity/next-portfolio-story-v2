@@ -8,7 +8,11 @@ import SubLink from "./leftSide/SubLink";
 import PorfolioList from "./rightSide/PortfolioList";
 import Contact from "./leftSide/Contact";
 
-import { NotionResultsIF, getNotionApi } from "../apis/portfolioApi";
+import {
+  NotionResultsIF,
+  NotionSortIF,
+  getNotionApi,
+} from "../apis/portfolioApi";
 
 async function getPortfolio() {
   const convert = (results: NotionResultsIF) => {
@@ -23,7 +27,12 @@ async function getPortfolio() {
     };
   };
 
-  const data = await getNotionApi();
+  const body: NotionSortIF = {
+    page_size: 15,
+    sorts: [{ property: "Date", direction: "descending" }],
+  };
+
+  const data = await getNotionApi({ body });
   const convertData = data.results.map(convert);
   return convertData;
 }
