@@ -2,18 +2,12 @@ import moment from "moment";
 
 import style from "./page.module.css";
 
-import { NotionResultsIF, getNotionApi } from "../apis/portfolioApi";
+import {
+  NotionResultsIF,
+  NotionSortIF,
+  getNotionApi,
+} from "../apis/portfolioApi";
 import Image from "next/image";
-
-interface NotionSortingIF {
-  page_size: number;
-  sorts: [
-    {
-      property: string;
-      direction: string;
-    }
-  ];
-}
 
 async function getPortfolio() {
   const convert = (results: NotionResultsIF) => {
@@ -32,7 +26,7 @@ async function getPortfolio() {
     };
   };
 
-  const body: NotionSortingIF = {
+  const body: NotionSortIF = {
     page_size: 15,
     sorts: [{ property: "Date", direction: "descending" }],
   };
