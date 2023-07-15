@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/globals.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/swiper/swiper-bundle.min.js"
+    ></script>
+    <title>Publish</title>
+  </head>
+  <body>
+    <main class="main">
+      <div class="home-area">
+        <div class="home-area-top">
+          <div class="swiper home-swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div
+                  class="swiper-visual-area"
+                  style="background-color: rgb(219, 82, 82)"
+                >
+                  <img
+                    class="home-swiper-image"
+                    src="./assets/image/swiper-item-01.png"
+                  />
+                  <div class="home-swiper-blur"></div>
+                  <div class="home-swiper-title-wrapper">
+                    <h1 class="home-swiper-title">FRONT-END DEVELOPER</h1>
+                    <h2 class="home-swiper-sub-title">
+                      더 나은 세상을 만드는 개발자
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="swiper-visual-area"
+                  style="background-color: rgb(219, 82, 82)"
+                >
+                  <img
+                    class="home-swiper-image"
+                    src="./assets/image/swiper-item-01.png"
+                  />
+                  <div class="home-swiper-blur"></div>
+                  <div class="home-swiper-title-wrapper">
+                    <h1 class="home-swiper-title">FRONT-END DEVELOPER</h1>
+                    <h2 class="home-swiper-sub-title">
+                      더 나은 세상을 만드는 개발자
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="swiper-visual-area"
+                  style="background-color: rgb(219, 82, 82)"
+                >
+                  <img
+                    class="home-swiper-image"
+                    src="./assets/image/swiper-item-01.png"
+                  />
+                  <div class="home-swiper-blur"></div>
+                  <div class="home-swiper-title-wrapper">
+                    <h1 class="home-swiper-title">FRONT-END DEVELOPER</h1>
+                    <h2 class="home-swiper-sub-title">
+                      더 나은 세상을 만드는 개발자
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="home-navigation-wrapper">
+              <div class="home-navigation-inner-wrapper">
+                <div class="home-swiper-prev-btn">
+                  <img src="./assets/image/prev-btn.png" />
+                </div>
+                <div class="home-swiper-next-btn">
+                  <img src="./assets/image/next-btn.png" />
+                </div>
+              </div>
+              <div class="swiper-scrollbar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      let swiper = new Swiper(".home-swiper-container", {
+        spaceBetween: 0,
+        slidesPerView: 1,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+        },
+        navigation: {
+          prevEl: ".home-swiper-prev-btn",
+          nextEl: ".home-swiper-next-btn",
+        },
+        scrollbar: {
+          el: ".swiper-scrollbar",
+          draggable: false,
+          snapOnRelease: true,
+        },
+      });
+    </script>
+  </body>
+</html>
